@@ -1,15 +1,21 @@
-# encryption with SSDs
-Just got 2 Samsung Evo 850 500G SSDs into my machine. 
-Hope is to be able to utilize dedup with ZFS on top of the hardwarebased encryption
+### Linux installation with Installer
 
-sedutil-cli --yesIreallywanttoERASEALLmydatausingthePSID <PSID> /dev/sda
-sedutil-cli --initialSetup <password> /dev/sda
-sedutil-cli --enableLockingRange 0 <password> /dev/sda
+## Ubuntu 18.04.1 LTS
+somehow they have a couple of bugs in their installer, so what I did wa sthe following:
+- install encrypted with xfs root and ext4 boot partition. no swap partition (as that threw the error)
+When the system was running:
+- booted up, 
+- installed refind
+- mounted efi partition as /esp
+- killed the content of the EFI/UBUNTU folder and linked that folder in as boot (bind mount via fstab)
+- had refind create a refind config in /boot
+- created a new luks partition, entered that in /etc/crypttab, made it swap
+- opened the LXHOME luks device, also entered in fstab and crypttab
+- set root password, logged in as root, logged out personal user
+- switched home to folder in LXHOME, killed oldhome
+- kept bootold for the time being, sometimes ubuntu needs that for upgrading etc.
 
-shutdown, then start from machine turned off
-
-sedutil-cli --setLockingRange 0 rw <password> /dev/sda
-sedutil-cli --setMBRDone <password> /dev/sda
-
-So far for today, we will see how it goes with automatic unlocking and starting the zfs filesystem as I do not want to use a PBA as it is not my system drive and the target is to keep it all startable via ssh interaction without having to use IPMI or local console as a PBA would require.
-As of today I am not aware of a remote-capable PBA for SEDUTIL.
+and right, couple more things:
+- installed gnome to have a proper gnome session
+- uninstalled amazon (ubuntu-web-launchers)
+- amdgpu-pro
