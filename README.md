@@ -1,7 +1,7 @@
 ### Linux installation with Installer
 
 ## Ubuntu 18.04.1 LTS
-somehow they have a couple of bugs in their installer, so what I did wa sthe following:
+somehow they have a couple of bugs in their installer, so what I did was the following:
 - install encrypted with xfs root and ext4 boot partition. no swap partition (as that threw the error)
 When the system was running:
 - booted up, 
