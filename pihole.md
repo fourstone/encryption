@@ -41,16 +41,17 @@ sudo /sbin/ldconfig
 sudo nano /usr/local/etc/stubby/stubby.yml
 ```
 listen_addresses:
-        - 127.0.0.1@5353
-        - 0::1@5353
-
-`nano /home/pi/getdns/stubby/systemd/stubby.service`
+- 127.0.0.1@5353
+- 0::1@5353
+- `nano /home/pi/getdns/stubby/systemd/stubby.service`
 - /usr/local/bin/stubby
-`sudo cp /home/pi/getdns/stubby/systemd/stubby.service /lib/systemd/system/`
-`useradd stubby`
-`sudo mkdir /var/cache/stubby`
-`sudo systemctl enable stubby`
-`sudo systemctl start stubby`
+- ```
+sudo cp /home/pi/getdns/stubby/systemd/stubby.service /lib/systemd/system/
+useradd stubby
+sudo mkdir /var/cache/stubby
+sudo systemctl enable stubby
+sudo systemctl start stubby
+```
 
 # Change Setup in Pihole
 -
