@@ -45,7 +45,7 @@ listen_addresses:
 - 0::1@5353
 - `nano /home/pi/getdns/stubby/systemd/stubby.service`
 - /usr/local/bin/stubby
-- ```
+```
 sudo cp /home/pi/getdns/stubby/systemd/stubby.service /lib/systemd/system/
 useradd stubby
 sudo mkdir /var/cache/stubby
