@@ -40,11 +40,8 @@ sudo make install
 sudo /sbin/ldconfig
 sudo nano /usr/local/etc/stubby/stubby.yml
 ```
-listen_addresses:
-- 127.0.0.1@5353
-- 0::1@5353
-- `nano /home/pi/getdns/stubby/systemd/stubby.service`
-- /usr/local/bin/stubby
+listen_addresses: 127.0.0.1@5353
+- `nano /home/pi/getdns/stubby/systemd/stubby.service` -> /usr/local/bin/stubby
 ```
 sudo cp /home/pi/getdns/stubby/systemd/stubby.service /lib/systemd/system/
 useradd stubby
@@ -54,4 +51,4 @@ sudo systemctl start stubby
 ```
 
 # Change Setup in Pihole
--
+- Settings -> DNS -> 127.0.0.1#5353, Use DNSSEC
