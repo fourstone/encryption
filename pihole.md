@@ -24,8 +24,8 @@ based on the explanation from heise.de and the stubby homepage. Mostly this is t
 - note down frontend password
 
 # Install Stubby
+- `sudo apt-get install libtool autoconf m4 libssl-dev libyaml-dev`
 ```
-sudo apt-get install libtool autoconf m4 libssl-dev libyaml-dev
 git clone https://github.com/getdnsapi/getdns.git
 cd getdns
 git checkout develop
@@ -34,7 +34,6 @@ libtoolize -ci
 autoreconf -fi
 mkdir build
 cd build
-../configure --prefix=<install_location> --without-libidn --without-libidn2 --enable-stub-only --with-ssl=<openssl_location> --with-stubby
 make
 sudo make install
 sudo /sbin/ldconfig
