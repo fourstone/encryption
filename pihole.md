@@ -1,9 +1,9 @@
-## Setting up Pihole with Stubby on raspbian
+## Setting up Pihole with Stubby on raspbian (12.10.2018)
 
 based on the explanation from heise.de and the stubby homepage. Mostly this is to keep it neatly and updated in a single place and easy to both read and copy-paste into the terminal
-[Stubby][442f8356]
 
-  [442f8356]: https://dnsprivacy.org/wiki/pages/viewpage.action?pageId=3145786 "Stubby"
+[Stubby](https://dnsprivacy.org/wiki/pages/viewpage.action?pageId=3145786)
+[heise](https://www.heise.de/ct/ausgabe/2018-15-Verschluesselte-DNS-Anfragen-mit-Pi-hole-4094923.html)
 
 # Pre-Boot
 - raspbian lite with etcher onto microSD-card
