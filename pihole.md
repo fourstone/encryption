@@ -34,6 +34,7 @@ libtoolize -ci
 autoreconf -fi
 mkdir build
 cd build
+../configure --prefix=/usr/local --without-libidn --without-libidn2 --enable-stub-only --with-stubby
 make
 sudo make install
 sudo /sbin/ldconfig
