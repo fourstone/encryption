@@ -3,6 +3,7 @@
 based on the explanation from heise.de and the stubby homepage. Mostly this is to keep it neatly and updated in a single place and easy to both read and copy-paste into the terminal
 
 [Stubby](https://dnsprivacy.org/wiki/pages/viewpage.action?pageId=3145786)
+
 [heise](https://www.heise.de/ct/ausgabe/2018-15-Verschluesselte-DNS-Anfragen-mit-Pi-hole-4094923.html)
 
 # Pre-Boot
@@ -47,7 +48,7 @@ listen_addresses: 127.0.0.1@5353
 - `nano /home/pi/getdns/stubby/systemd/stubby.service` -> /usr/local/bin/stubby
 ```
 sudo cp /home/pi/getdns/stubby/systemd/stubby.service /lib/systemd/system/
-useradd stubby
+sudo useradd stubby
 sudo mkdir /var/cache/stubby
 sudo systemctl enable stubby
 sudo systemctl start stubby
