@@ -6,8 +6,7 @@ somehow they have a couple of bugs in their installer, so what I did was the fol
 When the system was running:
 - booted up, 
 - installed refind
-- mounted efi partition as /esp
-- killed the content of the EFI/UBUNTU folder and linked that folder in as boot (bind mount via fstab)
+- put the ubuntu efi directory in the ignore list of refind.conf (refind boots the entry from the boot partition, the efi is duplicate but is kept as fallback, just removed from the refind screen)
 - had refind create a refind config in /boot
 - created a new luks partition, entered that in /etc/crypttab, made it swap
 - opened the LXHOME luks device, also entered in fstab and crypttab
